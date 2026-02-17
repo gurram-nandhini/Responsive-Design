@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<head> 
+<title>Responsive Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+} 
+header{
+    background: linear-gradient(90deg,#1d2671,#c33764);
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+.hero{
+    block-size:80vh;
+    background: linear-gradient(to right,#ffecd2,#fcb69f);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+.hero h1{
+    font-size:50px;
+    margin-block-end:15px;
+}
+.hero p{
+    font-size:18px;
+}
+.cards{
+    display:flex;
+    justify-content:space-around;
+    padding:40px;
+    gap:20px;
+}
+
+.card{
+    background:#fff;
+    padding:20px;
+    inline-size:30%;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+@media (max-width: 768px){
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+    .card{
+        inline-size:80%;
+    }
+} 
+@media (max-width: 600px){
+    nav ul{
+        position:absolute;
+        inset-block-start:60px;
+        inset-inline-start:0;
+        inline-size:100%;
+        background:#1d2671;
+        flex-direction:column;
+        display:none;
+        text-align:center;
+    }
+    nav ul.show{
+        display:block;
+    }
+    .menu-toggle{
+        display:block;
+    }
+    nav ul li{
+        padding:15px 0;
+    }
+    .hero h1{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">MyWebsite</div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <nav>
+        <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero">
+    <div>
+        <h1>Responsive Design</h1>
+        <p>This website adapts to mobile, tablet, and desktop screens.</p>
+    </div>
+</section>
+<section class="cards">
+    <div class="card">
+        <h3>Fast</h3>
+        <p>Optimized for speed and performance.</p>
+    </div>
+    <div class="card">
+        <h3>Responsive</h3>
+        <p>Works on all screen sizes.</p>
+    </div>
+    <div class="card">
+        <h3>Modern</h3>
+        <p>Clean and professional layout.</p>
+    </div>
+</section>
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+</body>
+</html>
